@@ -4,7 +4,7 @@ import java.util.List;
 import lombok.Builder;
 import lombok.NonNull;
 
-@Builder
+@Builder(toBuilder = true)
 public record SensorMetadata(
         Double longitude,
         Double latitude,

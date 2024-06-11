@@ -8,6 +8,7 @@ import lombok.NonNull;
 /**
  * Weather data structure holding all available data.
  *
+ * @param id The unique identifier for this weather data
  * @param time Time the weather data was captured
  * @param temperature Temperature measured in Celsius
  * @param pressure Pressure measured in millibars
@@ -18,8 +19,9 @@ import lombok.NonNull;
  * @param uvIndex UV Index, 0-11+
  * @param sensorMetadata Metadata of the sensor sending the weather data
  */
-@Builder
+@Builder(toBuilder = true)
 public record WeatherData(
+        String id,
         @NonNull ZonedDateTime time,
         Double temperature,
         Double pressure,
